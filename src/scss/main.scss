@@ -1,0 +1,38 @@
+@import "reset";
+
+@import "mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+a, img {
+  -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */
+}
+
+html, body {
+  // -webkit-user-select: none;
+  // user-select: none;
+  // min-width: 320px !important;
+  // max-width: 780px;
+  margin: 0 auto;
+  overflow-y: auto !important;
+  scroll-behavior:smooth;
+}
+
+html, body, #root {
+  height: auto;
+  overflow-y: auto!important;
+}
+
+html {
+  font-family: $font;
+}
+
+input, textarea {
+  font-family: $font;
+}
+
+.am-picker-popup-content .am-picker-col{
+  width: 33.33%;
+}

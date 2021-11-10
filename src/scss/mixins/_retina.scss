@@ -1,0 +1,15 @@
+
+@mixin retina-img($imgpath, $x2, $repeat: no-repeat) {
+  background-image: url($imgpath);
+  background-size: 100%;
+  background-repeat: $repeat;
+
+  /* CSS for high-resolution devices */
+  @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+  only screen and (-moz-min-device-pixel-ratio: 1.5),
+  only screen and (-o-min-device-pixel-ratio: 3/2),
+  only screen and (min-device-pixel-ratio: 1.5) {
+    background-image: url($x2);
+  }
+}
+
