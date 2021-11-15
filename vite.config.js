@@ -3,7 +3,7 @@ import reactRefresh from '@vitejs/plugin-react-refresh'
 // import vitePluginImp from 'vite-plugin-imp'
 import usePluginImport from 'vite-plugin-importer'
 import compressPlugin from 'vite-plugin-compression'
-// import antdDayjs from 'antd-dayjs-vite-plugin';
+import antdDayjs from 'antd-dayjs-vite-plugin';
 import path from 'path'
 import proxy from './config/proxy.js'
 
@@ -27,7 +27,7 @@ export default defineConfig({
     //   ],
     // }),
     compressPlugin(),
-    // antdDayjs()
+    antdDayjs()
   ],
   css: {
     preprocessorOptions: {
