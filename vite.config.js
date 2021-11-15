@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
-import vitePluginImp from 'vite-plugin-imp'
+// import vitePluginImp from 'vite-plugin-imp'
+import usePluginImport from 'vite-plugin-importer'
 import compressPlugin from 'vite-plugin-compression'
+// import antdDayjs from 'antd-dayjs-vite-plugin';
 import path from 'path'
 import proxy from './config/proxy.js'
 
@@ -11,15 +13,21 @@ const NODE_ENV = process.env.NODE_ENV // 环境变量
 export default defineConfig({
   plugins: [
     reactRefresh(),
-    vitePluginImp({
-      libList: [
-        {
-          libName: "antd",
-          style: (name) => `antd/lib/${name}/style/index.less`,
-        },
-      ],
+    usePluginImport({
+      libraryName: "antd",
+      libraryDirectory: "es",
+      style: true,
     }),
-    compressPlugin()
+    // vitePluginImp({
+    //   libList: [
+    //     {
+    //       libName: "antd",
+    //       style: (name) => `antd/lib/${name}/style/index.less`,
+    //     },
+    //   ],
+    // }),
+    compressPlugin(),
+    // antdDayjs()
   ],
   css: {
     preprocessorOptions: {
